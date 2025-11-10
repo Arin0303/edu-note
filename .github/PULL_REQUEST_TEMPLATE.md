@@ -1,7 +1,7 @@
 ---
 name: "🔀 Pull Request"
 about: 기능 추가, 수정, 버그 수정 시 PR 작성 템플릿
-title: "[PR] "
+title: "[타입] 간단 설명"
 labels: enhancement
 ---
 
