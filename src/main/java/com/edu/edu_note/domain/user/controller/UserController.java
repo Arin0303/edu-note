@@ -1,5 +1,7 @@
 package com.edu.edu_note.domain.user.controller;
 
+import com.edu.edu_note.domain.user.dto.LoginRequest;
+import com.edu.edu_note.domain.user.dto.LoginResponse;
 import com.edu.edu_note.domain.user.dto.UserSignUpRequest;
 import com.edu.edu_note.domain.user.dto.UserSignUpResponse;
 import com.edu.edu_note.domain.user.service.UserService;
@@ -28,4 +30,13 @@ public class UserController {
                         responseData
                 ));
     }
+    @PostMapping("/login")
+    public ResponseEntity<ApiResponse<LoginResponse>> login(@RequestBody LoginRequest request) {
+        LoginResponse response = userService.login(request);
+
+        return ResponseEntity.ok(
+                ApiResponse.success("로그인이 완료되었습니다.", response)
+        );
+    }
+
 }
